@@ -43,7 +43,6 @@ function NavBar() {
     return (
             <Toolbar position="sticky" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
                 <img src={homeimg} className={classes.homeimg}/> 
-                
                 <Typography variant="h6" className={classes.menuItem}>
                     Ariatna G. Alemán
                 </Typography>
