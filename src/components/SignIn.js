@@ -13,7 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import MisHuellas from './MisHuellas.js';
+import HomePage from './HomePage.js';
 import {Link} from 'react-router-dom';
 
 
@@ -75,7 +75,7 @@ function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form onSubmit={MisHuellas} className={classes.form} noValidate>
+          <form onSubmit={HomePage} className={classes.form} noValidate>
             <TextField
               variant="outlined"
               margin="normal"
@@ -102,7 +102,7 @@ function SignIn() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-           <Link to="/MisHuellas">
+           <Link to="/HomePage">
             <Button
               type="submit"
               fullWidth
