@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import Slider from './Slider'
 import SidebarItem from './Sidebaritem'
+import {Link} from 'react-router-dom';
+import CustomBtn from './CustomBtn'
 
 const DEFAULT_OPTIONS = [
   {
@@ -114,6 +116,12 @@ function Edit() {
             />
           )
         })}
+        <Link to="/MisHuellas">
+        <CustomBtn txt="Guardar Cambios"/>
+      </Link>
+      <Link to="/">
+        <CustomBtn txt="EditarMinucias"/>
+      </Link>
       </div>
       <Slider
         min={selectedOption.range.min}

@@ -5,13 +5,15 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
+import Link1 from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import HomePage from './HomePage.js';
+import {Link} from 'react-router-dom';
 
 function Copyright() {
     return (
@@ -71,7 +73,7 @@ function SignUp() {
           <Typography component="h1" variant="h5">
             Create Account
           </Typography>
-          <form className={classes.form} noValidate>
+          <form onSubmit={HomePage} className={classes.form} noValidate>
           <TextField
               variant="outlined"
               margin="normal"
@@ -120,6 +122,7 @@ function SignUp() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+            <Link to="/HomePage">
             <Button
               type="submit"
               fullWidth
@@ -127,13 +130,14 @@ function SignUp() {
               color="primary"
               className={classes.submit} 
             >
-                Sign Up
+                Sign Upp
             </Button>
+            </Link>
             <Grid container>
               <Grid item>
-                <Link href="/SignIn" variant="body2">
-                  {"Do you have an account? Sign In"}
-                </Link>
+              <Link1 href="./SignIn" variant="body2">
+                  {"Do you have an account? Sign Up"}
+              </Link1>
               </Grid>
             </Grid>
             <Box mt={5}>

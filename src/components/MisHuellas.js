@@ -3,6 +3,7 @@ import {Typography} from '@material-ui/core';
 import NavBar from './NavBar'
 import Grid from './Grid'
 import Footer from './Footer'
+import {Link} from 'react-router-dom';
 
 //import iconos
 import {HiOutlineFingerPrint} from "react-icons/hi";
@@ -75,14 +76,26 @@ function MisHuellas() {
           </Typography>
         </div>
         <div className={`${classes.grid} ${classes.bigSpace}`}>
-          <Grid icon={<HiFingerPrint style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="Huella 1" btnTitle="Show me More" />
-          <Grid icon={<HiOutlineFingerPrint style={{fill: "#449A76", height:"125", width:"125"}}/>} title="Huella 2" btnTitle="Show me More"/>
-          <Grid icon={<GiFingerPrint style={{fill: "#D05B2D", height:"125", width:"125"}}/>}  title="Huella 3" btnTitle="Show me More"/>
-        </div>
+          <Link to="/Edit">
+            <Grid icon={<HiFingerPrint style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="Huella 1" btnTitle="Editar" />
+          </Link>
+          <Link to="/Edit">
+            <Grid icon={<HiOutlineFingerPrint style={{fill: "#449A76", height:"125", width:"125"}}/>} title="Huella 2" btnTitle="Editar"/>
+          </Link>
+          <Link to="/Edit">
+            <Grid icon={<GiFingerPrint style={{fill: "#D05B2D", height:"125", width:"125"}}/>}  title="Huella 3" btnTitle="Editar"/>
+          </Link>
+       </div>
         <div className={`${classes.grid} ${classes.littleSpace}`}>  
-          <Grid icon={<HiHand style={{fill: "#5EA780", height:"125", width:"125"}}/>}  title="Huella 4" btnTitle="Show me More"/>
-          <Grid icon={<IoIosFingerPrint style={{fill: "#E69426", height:"125", width:"125"}}/>}  title="Huella 5" btnTitle="Show me More"/>
-          <Grid icon={<RiFingerprintFill style={{fill: "#2EA09D", height:"125", width:"125"}}/>} title="Huella 6" btnTitle="Show me More"/>
+        <Link to="/Edit">
+          <Grid icon={<HiHand style={{fill: "#5EA780", height:"125", width:"125"}}/>}  title="Huella 4" btnTitle="Editar"/> 
+        </Link>
+        <Link to="/Edit">
+          <Grid icon={<IoIosFingerPrint style={{fill: "#E69426", height:"125", width:"125"}}/>}  title="Huella 5" btnTitle="Editar"/>
+        </Link>
+        <Link to="/Edit">
+          <Grid icon={<RiFingerprintFill style={{fill: "#2EA09D", height:"125", width:"125"}}/>} title="Huella 6" btnTitle="Editar"/>
+        </Link>
         </div>
         <div className={classes.bigSpace}>
           <Footer/>

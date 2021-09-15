@@ -3,6 +3,10 @@ import CustomBtn from './CustomBtn'
 import homeimg from '../components/homepage.png'
 import {Toolbar, Typography} from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles"; 
+import {Link} from 'react-router-dom';
+import HomePage from './HomePage.js';
+import MisHuellas from './MisHuellas.js';
+import SignIn from './SignIn.js';
 
 const styles = makeStyles({
     bar:{
@@ -13,7 +17,7 @@ const styles = makeStyles({
           }
     },
     homeimg: {
-        width: "15%", 
+        width: "45%", 
         ['@media (max-width:780px)']: { 
            display: "none"
            }
@@ -39,15 +43,21 @@ const styles = makeStyles({
 function NavBar() {
     const classes = styles()
     return (
-            <Toolbar position="sticky" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
-                <img src={homeimg} className={classes.homeimg}/> 
+            <Toolbar position="sticky" color="rgba(0, 0, 0, 0.87)" className={classes.bar}> 
+                <Link to="/HomePage">
+                    <img src={homeimg} className={classes.homeimg}/> 
+                </Link>
                 <Typography variant="h6" className={classes.menuItem}>
+                    <Link to="/MisHuellas">
                     Mis Huellas
+                    </Link>
                 </Typography>
                 <Typography variant="h6" className={classes.menuItem}>
                     Ariatna G. Alemán
                 </Typography>
-                <CustomBtn txt="Cerrar Sesión"/>
+                <Link to="/SignIn">
+                    <CustomBtn txt="Cerrar Sesión"/>
+                </Link>
             </Toolbar>
     )
 }

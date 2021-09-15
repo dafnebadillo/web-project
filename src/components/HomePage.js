@@ -4,6 +4,8 @@ import NavBar from './NavBar'
 import Grid from './Grid'
 import Footer from './Footer'
 import {Component} from 'react'
+import MisHuellas from './MisHuellas';
+import {Link} from 'react-router-dom';
 
 //import iconos
 import {BiScan} from "react-icons/bi";
@@ -74,8 +76,10 @@ function HomePage() {
         </div>
         <div className={`${classes.grid} ${classes.bigSpace}`}>
           <Grid icon={<BiScan style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="" btnTitle="Sube una Huella" />
+          <Link to="/MisHuellas">
           <Grid icon={<FaEdit style={{fill: "#D0372D", height:"125", width:"125"}}/>}  title="" btnTitle="Edición de Huellas"/>
-        </div>
+          </Link>
+            </div>
         <div className={classes.bigSpace}>
           <Footer/>
         </div>
