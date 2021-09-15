@@ -6,13 +6,15 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
+import Link1 from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import MisHuellas from './MisHuellas.js';
+import {Link} from 'react-router-dom';
 
 
 function Copyright() {
@@ -73,7 +75,7 @@ function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} noValidate>
+          <form onSubmit={MisHuellas} className={classes.form} noValidate>
             <TextField
               variant="outlined"
               margin="normal"
@@ -100,6 +102,7 @@ function SignIn() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+           <Link to="/MisHuellas">
             <Button
               type="submit"
               fullWidth
@@ -109,16 +112,17 @@ function SignIn() {
             >
                 Sign In
             </Button>
+            </Link>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link1 href="#" variant="body2">
                   Forgot password?
-                </Link>
+                </Link1>
               </Grid>
               <Grid item>
-                <Link to="./SignUp" variant="body2">
+                <Link1 href="./SignUp" variant="body2">
                   {"Don't have an account? Sign Up"}
-                </Link>
+                </Link1>
               </Grid>
             </Grid>
             <Box mt={5}>

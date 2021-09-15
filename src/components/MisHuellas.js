@@ -4,21 +4,13 @@ import NavBar from './NavBar'
 import Grid from './Grid'
 import Footer from './Footer'
 
-//changes to imports 
-import ImgHuella from './huella.jpg'
-import SecurityIcon from '@material-ui/icons/Security';
-import EventNoteIcon from '@material-ui/icons/EventNote';
-import TrendingUpIcon from '@material-ui/icons/TrendingUp';
-import ImportExportIcon from '@material-ui/icons/ImportExport';
-import HttpIcon from '@material-ui/icons/Http';
+//import iconos
 import {HiOutlineFingerPrint} from "react-icons/hi";
 import {HiFingerPrint} from "react-icons/hi";
 import {GiFingerPrint} from "react-icons/gi";
 import {HiHand} from "react-icons/hi";
 import {IoIosFingerPrint} from "react-icons/io";
 import {RiFingerprintFill} from "react-icons/ri";
-
-
 
 
 const theme = createMuiTheme({
