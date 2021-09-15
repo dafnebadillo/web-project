@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import SignIn from './components/SignIn.js';
 import SignUp from './components/SignUp.js';
-import MisHuellas from './components/MisHuellas.js';
+import HomePage from './components/HomePage.js';
 
 import './App.css';
 
@@ -13,8 +13,8 @@ class App extends Component {
     <div className="App">
       <BrowserRouter>
       <Switch>
-          <Route path="/MisHuellas">
-            <MisHuellas />
+          <Route path="/HomePage">
+            <HomePage />
           </Route>
           <Route path="/SignUp">
             <SignUp />
