@@ -16,7 +16,7 @@ const styles = makeStyles({
 })
 
 function Grid(props) {
-    const {icon, title, btnTitle, img} = props;
+    const {icon, title, btnTitle} = props;
     const classes = styles(); 
     return (
         <div className={classes.wrapper}>

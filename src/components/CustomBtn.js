@@ -1,7 +1,6 @@
 import React from 'react'
 import {Button} from '@material-ui/core'
 import {withStyles} from '@material-ui/core/styles'
-import { PinDropSharp } from '@material-ui/icons';
 
 const StyledButton = withStyles({
     root: {
