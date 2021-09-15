@@ -1,8 +1,6 @@
 import React from 'react'
 import CustomBtn from './CustomBtn'
 import homeimg from '../components/homepage.png'
-import logo from '../components/logo.svg'
-import logoMobile from '../components/logoMobile.svg'
 import {Toolbar, Typography} from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles"; 
 
@@ -43,6 +41,9 @@ function NavBar() {
     return (
             <Toolbar position="sticky" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>   
                 <img src={homeimg} className={classes.homeimg}/> 
+                <Typography variant="h6" className={classes.menuItem}>
+                    Mis Huellas
+                </Typography>
                 <Typography variant="h6" className={classes.menuItem}>
                     Ariatna G. Alemán
                 </Typography>

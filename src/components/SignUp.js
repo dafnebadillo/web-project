@@ -11,7 +11,6 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import image from '../components/logo.jpg'
 import { makeStyles } from '@material-ui/core/styles';
 
 function Copyright() {
@@ -58,10 +57,10 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-function SignIn() {
+function SignUp() {
     const classes = useStyles();
     return (
-        <Grid container component="main" className={classes.root}>
+      <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
@@ -70,9 +69,20 @@ function SignIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Create Account
           </Typography>
           <form className={classes.form} noValidate>
+          <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="Name"
+              name="name"
+              autoComplete="name"
+              autoFocus
+            />
             <TextField
               variant="outlined"
               margin="normal"
@@ -82,6 +92,17 @@ function SignIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="num"
+              label="Phone Number"
+              name="num"
+              autoComplete="num"
               autoFocus
             />
             <TextField
@@ -106,14 +127,9 @@ function SignIn() {
               color="primary"
               className={classes.submit} 
             >
-                Sign In
+                Sign Up
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
                 <Link href="/SignIn" variant="body2">
                   {"Do you have an account? Sign In"}
@@ -130,4 +146,4 @@ function SignIn() {
     )
 }
 
-export default SignIn
+export default SignUp

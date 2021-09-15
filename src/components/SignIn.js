@@ -1,6 +1,5 @@
 
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,9 +12,8 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import image from '../components/logo.jpg'
 import { makeStyles } from '@material-ui/core/styles';
-import SignUp from './SignUp.js'
+
 
 function Copyright() {
     return (
@@ -102,7 +100,6 @@ function SignIn() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Link href="./MisHuellas.js">
             <Button
               type="submit"
               fullWidth
@@ -112,8 +109,6 @@ function SignIn() {
             >
                 Sign In
             </Button>
-            </Link>
-            
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
