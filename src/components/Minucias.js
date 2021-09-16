@@ -4,81 +4,51 @@ import Slider from './Slider'
 import SidebarItem from './Sidebaritem'
 import {Link} from 'react-router-dom';
 import CustomBtn from './CustomBtn'
+import ReactDOM from 'react-dom'
+
 
 const DEFAULT_OPTIONS = [
   {
-    name: 'Brightness',
-    property: 'brightness',
-    value: 100,
-    range: {
-      min: 0,
-      max: 200
-    },
-    unit: '%'
+    name: 'Editar'
   },
   {
-    name: 'Contrast',
-    property: 'contrast',
-    value: 100,
-    range: {
-      min: 0,
-      max: 200
-    },
-    unit: '%'
+    name: 'Aceptar'
   },
   {
-    name: 'Saturation',
-    property: 'saturate',
-    value: 100,
-    range: {
-      min: 0,
-      max: 200
-    },
-    unit: '%'
+    name: 'Cancelar'
   },
   {
-    name: 'Grayscale',
-    property: 'grayscale',
-    value: 0,
-    range: {
-      min: 0,
-      max: 100
-    },
-    unit: '%'
-  },
-  {
-    name: 'Sepia',
-    property: 'sepia',
-    value: 0,
-    range: {
-      min: 0,
-      max: 100
-    },
-    unit: '%'
-  },
-  {
-    name: 'Hue Rotate',
-    property: 'hue-rotate',
-    value: 0,
-    range: {
-      min: 0,
-      max: 360
-    },
-    unit: 'deg'
-  },
-  {
-    name: 'Blur',
-    property: 'blur',
-    value: 0,
-    range: {
-      min: 0,
-      max: 20
-    },
-    unit: 'px'
+    name: 'Refrescar'
   }
 ]
 
-function Edit() {
+class Application extends React.Component {
+    constructor(props) {
+      super(props);
+      
+      this.state = { x: 0, y: 0 };
+    }
+    
+    _onMouseMove(e) {
+      const position = this.refs.elem.getDOMNode().getBoundingClientRect();
+      console.log(position, e.nativeEvent.offsetX, e.screenX);
+  
+      this.setState({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
+    }
+    
+    render() {
+      const { x, y } = this.state;
+      return <div ref="elem" className="container">
+        <div>
+          <img onMouseMove={this._onMouseMove.bind(this)} width="200" height="200" src="https://yt3.ggpht.com/-7zFDHK5X45w/AAAAAAAAAAI/AAAAAAAAAAA/QJfHeLTEZwE/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" />
+        </div>
+        <h1>Mouse coordinates: { x } { y }</h1>
+      </div>;
+    }
+  }
+  
+
+function Minucias() {
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
   const [options, setOptions] = useState(DEFAULT_OPTIONS)
   const selectedOption = options[selectedOptionIndex]
@@ -119,18 +89,12 @@ function Edit() {
         <Link to="/MisHuellas">
         <CustomBtn txt="Guardar Cambios"/>
       </Link>
-      <Link to="/Minucias">
-        <CustomBtn txt="Editar Minucias"/>
+      <Link to="/HomePage">
+        <CustomBtn txt="Pagina Principal"/>
       </Link>
       </div>
-      <Slider
-        min={selectedOption.range.min}
-        max={selectedOption.range.max}
-        value={selectedOption.value}
-        handleChange={handleSliderChange}
-      />
     </div>
   )
 }
-
-export default Edit;
+ReactDOM.render(<Application />, document.getElementById('app'));
+export default Minucias;
