@@ -6,6 +6,9 @@ import MisHuellas from './components/MisHuellas.js';
 import Edit from './components/Edit.js'
 import HomePage from './components/HomePage.js';
 import Minucias from './components/Minucias.js';
+import SubirHuellas from './components/SubirHuellas.js';
+//import {storage} from './components/firebase.js';
+
 import './App.css';
 
 
@@ -29,6 +32,9 @@ class App extends Component {
           </Route>
           <Route path="/Minucias">
             <Minucias/>
+          </Route>
+          <Route path="/SubirHuellas">
+            <SubirHuellas/>
           </Route>
           <Route path="/">
             <SignIn />

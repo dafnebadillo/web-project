@@ -3,15 +3,9 @@ import {Typography} from '@material-ui/core';
 import NavBar from './NavBar'
 import Grid from './Grid'
 import Footer from './Footer'
-import {Component} from 'react'
-import MisHuellas from './MisHuellas';
 import {Link} from 'react-router-dom';
-
-//import iconos
-import {BiScan} from "react-icons/bi";
-import {FaEdit} from "react-icons/fa";
-import { icons } from 'react-icons/lib';
-
+import React, {useState} from 'react';
+import {storage} from './firebase/firebase'
 
 const theme = createMuiTheme({
     ImgHuella: {
@@ -61,33 +55,49 @@ const styles = makeStyles({
     flexWrap: "wrap", 
   },
 })
+function SubirHuellas(){
+    const classes = styles();
+    const [file, setFile] = useState(null);
+    const [url, setURL] = useState("");
 
-function HomePage() {
-  const classes = styles(); 
+  function handleChange(e) {
+    setFile(e.target.files[0]);
+  }
+
+  function handleUpload(e) {
+    e.preventDefault();
+    const uploadTask = storage.ref(`/images/${file.name}`).put(file);
+    uploadTask.on("state_changed", console.log, console.error, () => {
+      storage
+        .ref("images")
+        .child(file.name)
+        .getDownloadURL()
+        .then((url) => {
+          setFile(null);
+          setURL(url);
+        });
+    });
+  } 
 
   return (
-    <div className="HomePage">
+    <div className="SubirHuellas">
       <ThemeProvider theme={theme}>
         <NavBar/>
         <div className={classes.wrapper}>
           <Typography variant="h4" className={classes.bigSpace} color="primary">
-             Home Page
+             Sube una Huella
           </Typography>
         </div>
         <div className={`${classes.grid} ${classes.bigSpace}`}>
-          <Link to="/SubirHuellas">
-          <Grid icon={<BiScan style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="" btnTitle="Sube una Huella" />
-          </Link>
-          <Link to="/MisHuellas">
-          <Grid icon={<FaEdit style={{fill: "#D0372D", height:"125", width:"125"}}/>}  title="" btnTitle="Edición de Huellas"/>
-          </Link>
-            </div>
-        <div className={classes.bigSpace}>
-          <Footer/>
-        </div>
+            <form onSubmit={handleUpload}>
+                <input type="file" onChange={handleChange} />
+                <button disabled={!file}>upload to firebase</button>
+            </form>
+            {url}
+            <img src={url} alt="" />
+        </div>   
       </ThemeProvider>
     </div>
   );
 }
-
-export default HomePage;
+export default SubirHuellas;

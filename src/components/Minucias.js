@@ -46,6 +46,7 @@ class Application extends React.Component {
       </div>;
     }
   }
+   
   
 
 function Minucias() {
@@ -96,5 +97,5 @@ function Minucias() {
     </div>
   )
 }
-ReactDOM.render(<Application />, document.getElementById('app'));
+//ReactDOM.render(<Application />, document.getElementById('app'));
 export default Minucias;
