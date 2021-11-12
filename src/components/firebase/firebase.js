@@ -3,13 +3,14 @@ import 'firebase/storage'
 
  // Your web app's Firebase configuration
  const firebaseConfig = {
-    apiKey: "AIzaSyBJ5mUwu_c2FRGCl5rTG1PKT2MM7C_E9Og",
-    authDomain: "webpro-afc54.firebaseapp.com",
-    projectId: "webpro-afc54",
-    storageBucket: "webpro-afc54.appspot.com",
-    messagingSenderId: "707527181115",
-    appId: "1:707527181115:web:9bf83ac0ab39b320eb2d1e"
-  };
+  apiKey: "AIzaSyCTWo0ohr9NKmmil1dw6IY-m1j27H-A-2A",
+  authDomain: "web-project-1b41a.firebaseapp.com",
+  projectId: "web-project-1b41a",
+  storageBucket: "web-project-1b41a.appspot.com",
+  messagingSenderId: "176288408854",
+  appId: "1:176288408854:web:c791e69c5000ad8c271c37",
+  measurementId: "G-GKFRMTTFFC"
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
