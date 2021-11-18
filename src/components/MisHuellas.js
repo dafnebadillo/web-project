@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 import Grid from './Grid'
 import Footer from './Footer'
 import {Link} from 'react-router-dom';
+import {storage} from '../firebase'
 
 //import iconos
 import {HiOutlineFingerPrint} from "react-icons/hi";

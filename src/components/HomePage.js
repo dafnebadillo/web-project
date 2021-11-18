@@ -3,14 +3,11 @@ import {Typography} from '@material-ui/core';
 import NavBar from './NavBar'
 import Grid from './Grid'
 import Footer from './Footer'
-import {Component} from 'react'
-import MisHuellas from './MisHuellas';
 import {Link} from 'react-router-dom';
 
 //import iconos
 import {BiScan} from "react-icons/bi";
 import {FaEdit} from "react-icons/fa";
-import { icons } from 'react-icons/lib';
 
 
 const theme = createMuiTheme({

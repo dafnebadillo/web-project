@@ -4,9 +4,7 @@ import homeimg from '../components/homepage.png'
 import {Toolbar, Typography} from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles"; 
 import {Link} from 'react-router-dom';
-import HomePage from './HomePage.js';
-import MisHuellas from './MisHuellas.js';
-import SignIn from './SignIn.js';
+import TutorialsList from "./tutorials-list.component";
 
 const styles = makeStyles({
     bar:{
@@ -48,7 +46,7 @@ function NavBar() {
                     <img src={homeimg} className={classes.homeimg}/> 
                 </Link>
                 <Typography variant="h6" className={classes.menuItem}>
-                    <Link to="/MisHuellas">
+                    <Link to="/TutorialsList">
                     Mis Huellas
                     </Link>
                 </Typography>

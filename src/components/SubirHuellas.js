@@ -1,11 +1,8 @@
 import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import {Typography} from '@material-ui/core'; 
 import NavBar from './NavBar'
-import Grid from './Grid'
-import Footer from './Footer'
-import {Link} from 'react-router-dom';
 import React, {useState} from 'react';
-import {storage} from './firebase/firebase'
+import {storage} from '../firebase'
 
 const theme = createMuiTheme({
     ImgHuella: {

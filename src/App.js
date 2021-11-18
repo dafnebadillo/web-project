@@ -7,7 +7,7 @@ import Edit from './components/Edit.js'
 import HomePage from './components/HomePage.js';
 import Minucias from './components/Minucias.js';
 import SubirHuellas from './components/SubirHuellas.js';
-//import {storage} from './components/firebase.js';
+import TutorialsList from "./components/tutorials-list.component";
 
 import './App.css';
 
@@ -21,8 +21,8 @@ class App extends Component {
           <Route path="/Edit">
             <Edit />
           </Route>
-          <Route path="/MisHuellas">
-            <MisHuellas />
+          <Route path="/TutorialsList">
+            <TutorialsList/>
           </Route>
           <Route path="/HomePage">
             <HomePage />
