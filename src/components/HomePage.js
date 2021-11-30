@@ -11,10 +11,10 @@ import {FaEdit} from "react-icons/fa";
 
 
 const theme = createMuiTheme({
-    ImgHuella: {
-        height:"125", 
-        width:"125",
-    },
+  ImgHuella: {
+      height:"125", 
+      width:"125",
+  },
   palette: {
     primary: {
       main:"#2e1667",
@@ -63,7 +63,7 @@ function HomePage() {
   const classes = styles(); 
 
   return (
-    <div className="HomePage">
+    <div className="HomePage" color="rgba(68,135,205,1)">
       <ThemeProvider theme={theme}>
         <NavBar/>
         <div className={classes.wrapper}>
@@ -75,7 +75,7 @@ function HomePage() {
           <Link to="/SubirHuellas">
           <Grid icon={<BiScan style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="" btnTitle="Sube una Huella" />
           </Link>
-          <Link to="/MisHuellas">
+          <Link to="/Edit">
           <Grid icon={<FaEdit style={{fill: "#D0372D", height:"125", width:"125"}}/>}  title="" btnTitle="Edición de Huellas"/>
           </Link>
             </div>

@@ -5,6 +5,7 @@ import {Toolbar, Typography} from '@material-ui/core'
 import {makeStyles} from "@material-ui/core/styles"; 
 import {Link} from 'react-router-dom';
 import TutorialsList from "./tutorials-list.component";
+import Edit from './Edit';
 
 const styles = makeStyles({
     bar:{
@@ -51,7 +52,9 @@ function NavBar() {
                     </Link>
                 </Typography>
                 <Typography variant="h6" className={classes.menuItem}>
-                    Ariatna G. Alemán
+                    <Link to="/Edit">
+                    Editar Huella
+                    </Link>
                 </Typography>
                 <Link to="/SignIn">
                     <CustomBtn txt="Cerrar Sesión"/>

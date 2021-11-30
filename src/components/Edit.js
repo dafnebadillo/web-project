@@ -4,6 +4,7 @@ import Slider from './Slider'
 import SidebarItem from './Sidebaritem'
 import {Link} from 'react-router-dom';
 import CustomBtn from './CustomBtn'
+import TutorialsList from "./tutorials-list.component";
 
 const DEFAULT_OPTIONS = [
   {
@@ -116,7 +117,7 @@ function Edit() {
             />
           )
         })}
-        <Link to="/MisHuellas">
+        <Link to="/TutorialsList">
         <CustomBtn txt="Guardar Cambios"/>
       </Link>
       <Link to="/Minucias">
